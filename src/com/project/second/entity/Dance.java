@@ -1,8 +1,17 @@
 package com.project.second.entity;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Dance extends MusicComposition {
+    @XmlElement(name="music-size")
     private double musicSize;
+    @XmlElement(name="country-of-origin")
     private String countryOfOrigin;
+
+    public Dance() {}
 
     public Dance(String title, int durationSeconds, String authorFirstName, String authorLastName, String country, MusicStyle style) {
         super(title, durationSeconds, authorFirstName, authorLastName, country, style);

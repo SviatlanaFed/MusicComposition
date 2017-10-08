@@ -9,6 +9,20 @@
         </xsd:complexType>
     </xsd:element>
 
+    <!-- common types -->
+    <xsd:simpleType name="name">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="5"></xsd:minLength>
+            <xsd:maxLength value="40"></xsd:maxLength>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="country">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="5"></xsd:minLength>
+            <xsd:maxLength value="40"></xsd:maxLength>
+        </xsd:restriction>
+    </xsd:simpleType>
+
     <!-- base composition -->
     <xsd:complexType name="composition">
         <xsd:sequence>
@@ -21,44 +35,33 @@
                     </xsd:restriction>
                 </xsd:simpleType>
             </xsd:element>
-            <xsd:element name="durationSeconds">
+            <xsd:element name="duration-seconds">
                 <xsd:simpleType>
                     <xsd:restriction base="xsd:int" />
                 </xsd:simpleType>
             </xsd:element>
-            <xsd:element name="authorFirstName">
-                <xsd:simpleType>
-                    <xsd:restriction base="xsd:string">
-                        <xsd:minLength value="5"></xsd:minLength>
-                        <xsd:maxLength value="40"></xsd:maxLength>
-                    </xsd:restriction>
-                </xsd:simpleType>
-            </xsd:element>
-            <xsd:element name="authorLastName">
-                <xsd:simpleType>
-                    <xsd:restriction base="xsd:string">
-                        <xsd:minLength value="5"></xsd:minLength>
-                        <xsd:maxLength value="40"></xsd:maxLength>
-                    </xsd:restriction>
-                </xsd:simpleType>
-            </xsd:element>
-            <xsd:element name="country">
-                <xsd:simpleType>
-                    <xsd:restriction base="xsd:string">
-                        <xsd:minLength value="5"></xsd:minLength>
-                        <xsd:maxLength value="40"></xsd:maxLength>
-                    </xsd:restriction>
-                </xsd:simpleType>
-            </xsd:element>
+            <xsd:element name="author-first-name" type="name" />
+            <xsd:element name="author-last-name" type="name" />
+            <xsd:element name="country" type="country" />
             <xsd:element name="style">
                 <xsd:simpleType>
                     <xsd:restriction base="xsd:string">
-                        <xsd:pattern value="(CLASSIC|ELECTRONIC|FOLK|POPULAR|WALTZ|POLONAISE|MENUET)"/>
+                        <xsd:enumeration value="CLASSIC" />
+                        <xsd:enumeration value="ELECTRONIC" />
+                        <xsd:enumeration value="FOLK" />
+                        <xsd:enumeration value="POPULAR" />
+                        <xsd:enumeration value="WALTZ" />
+                        <xsd:enumeration value="POLONAISE" />
+                        <xsd:enumeration value="MENUET" />
                     </xsd:restriction>
                 </xsd:simpleType>
             </xsd:element>
         </xsd:sequence>
-        <xsd:attribute name="id" type="xsd:int" use="required" />
+        <xsd:attribute name="id" use="required">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:ID" />
+            </xsd:simpleType>
+        </xsd:attribute>
     </xsd:complexType>
 
     <!-- dance -->
@@ -66,15 +69,8 @@
         <xsd:complexContent>
             <xsd:extension base="composition">
                 <xsd:sequence>
-                    <xsd:element name="musicSize" type="xsd:double" />
-                    <xsd:element name="countryOfOrigin">
-                        <xsd:simpleType>
-                            <xsd:restriction base="xsd:string">
-                                <xsd:minLength value="5"></xsd:minLength>
-                                <xsd:maxLength value="40"></xsd:maxLength>
-                            </xsd:restriction>
-                        </xsd:simpleType>
-                    </xsd:element>
+                    <xsd:element name="music-size" type="xsd:double" />
+                    <xsd:element name="country-of-origin" type="country" />
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
@@ -85,23 +81,9 @@
         <xsd:complexContent>
             <xsd:extension base="composition">
                 <xsd:sequence>
-                    <xsd:element name="performerFirstName">
-                        <xsd:simpleType>
-                            <xsd:restriction base="xsd:string">
-                                <xsd:minLength value="5"></xsd:minLength>
-                                <xsd:maxLength value="40"></xsd:maxLength>
-                            </xsd:restriction>
-                        </xsd:simpleType>
-                    </xsd:element>
-                    <xsd:element name="performerLastName">
-                        <xsd:simpleType>
-                            <xsd:restriction base="xsd:string">
-                                <xsd:minLength value="5"></xsd:minLength>
-                                <xsd:maxLength value="40"></xsd:maxLength>
-                            </xsd:restriction>
-                        </xsd:simpleType>
-                    </xsd:element>
-                    <xsd:element name="soundRecordingStudio">
+                    <xsd:element name="performer-first-name" type="name" />
+                    <xsd:element name="performer-last-name" type="name" />
+                    <xsd:element name="sound-recording-studio">
                         <xsd:simpleType>
                             <xsd:restriction base="xsd:string">
                                 <xsd:minLength value="10"></xsd:minLength>
