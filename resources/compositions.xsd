@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="compositions">
+        <xsd:complexType>
+            <xsd:choice maxOccurs="unbounded">
+                    <xsd:element name="song" type="song" minOccurs="0" />
+                    <xsd:element name="dance" type="dance" minOccurs="0" />
+            </xsd:choice>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- base composition -->
+    <xsd:complexType name="composition">
+        <xsd:sequence>
+
+            <xsd:element name="title">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:minLength value="5"></xsd:minLength>
+                        <xsd:maxLength value="40"></xsd:maxLength>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="durationSeconds">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:int" />
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="authorFirstName">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:minLength value="5"></xsd:minLength>
+                        <xsd:maxLength value="40"></xsd:maxLength>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="authorLastName">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:minLength value="5"></xsd:minLength>
+                        <xsd:maxLength value="40"></xsd:maxLength>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="country">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:minLength value="5"></xsd:minLength>
+                        <xsd:maxLength value="40"></xsd:maxLength>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="style">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:string">
+                        <xsd:pattern value="(CLASSIC|ELECTRONIC|FOLK|POPULAR|WALTZ|POLONAISE|MENUET)"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="xsd:int" use="required" />
+    </xsd:complexType>
+
+    <!-- dance -->
+    <xsd:complexType name="dance">
+        <xsd:complexContent>
+            <xsd:extension base="composition">
+                <xsd:sequence>
+                    <xsd:element name="musicSize" type="xsd:double" />
+                    <xsd:element name="countryOfOrigin">
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:minLength value="5"></xsd:minLength>
+                                <xsd:maxLength value="40"></xsd:maxLength>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!-- song -->
+    <xsd:complexType name="song">
+        <xsd:complexContent>
+            <xsd:extension base="composition">
+                <xsd:sequence>
+                    <xsd:element name="performerFirstName">
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:minLength value="5"></xsd:minLength>
+                                <xsd:maxLength value="40"></xsd:maxLength>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="performerLastName">
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:minLength value="5"></xsd:minLength>
+                                <xsd:maxLength value="40"></xsd:maxLength>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="soundRecordingStudio">
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:minLength value="10"></xsd:minLength>
+                                <xsd:maxLength value="40"></xsd:maxLength>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+</xsd:schema>

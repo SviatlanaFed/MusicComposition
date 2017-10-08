@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<compositions>
+    <song id="1">
+        <title>Song1</title>
+        <durationSeconds>130</durationSeconds>
+        <authorFirstName>DanceAuthorFirstName</authorFirstName>
+        <authorLastName>DanceAuthorLastName</authorLastName>
+        <country>DanceCountry</country>
+        <style>CLASSIC</style>
+        <performerFirstName>pFirstName</performerFirstName>
+        <performerLastName>pLastName</performerLastName>
+        <soundRecordingStudio>RecordingStudio</soundRecordingStudio>
+    </song>
+    <dance id="2">
+        <title>Dance1</title>
+        <durationSeconds>130</durationSeconds>
+        <authorFirstName>DanceAuthorFirstName</authorFirstName>
+        <authorLastName>DanceAuthorLastName</authorLastName>
+        <country>DanceCountry</country>
+        <style>CLASSIC</style>
+        <musicSize>1.25</musicSize>
+        <countryOfOrigin>CountryOrigin</countryOfOrigin>
+    </dance>
+    <song id="3">
+        <title>Song2</title>
+        <durationSeconds>125</durationSeconds>
+        <authorFirstName>DanceAuthorFirstName</authorFirstName>
+        <authorLastName>DanceAuthorLastName</authorLastName>
+        <country>DanceCountry</country>
+        <style>CLASSIC</style>
+        <performerFirstName>pFirstName</performerFirstName>
+        <performerLastName>pLastName</performerLastName>
+        <soundRecordingStudio>RecordingStudio</soundRecordingStudio>
+    </song>
+</compositions>
