@@ -1,0 +1,43 @@
+song
+TOO MUCH LOVE WILL KILL YOU
+257
+Brian
+Harold May
+Great Britain
+Spike Edney
+Brian Harold May
+Parlophone Records,Hollywood Records
+POPULAR
+;
+dance
+Gloomy waltz
+240
+Gioachino Antonio
+Rossini
+Austria
+0.75
+Italy
+WALTZ
+;
+song
+TOO MUCH LOVE WILL KILL YOU
+257
+Brian
+Harold May
+Great Britain
+Spike Edney
+Brian Harold May
+Parlophone Records,Hollywood Records
+POPULAR
+;
+song
+Scarborough fair;
+191
+folk
+ballad
+Great Britain
+Simon
+Garfunkel
+Parlophone Records
+FOLK
+;
