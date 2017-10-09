@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<compositions>
+    <song id="s1">
+        <title>Song1</title>
+        <duration-seconds>130</duration-seconds>
+        <author-first-name>Danceauthor-first-name</author-first-name>
+        <author-last-name>Danceauthor-last-name</author-last-name>
+        <country>DanceCountry</country>
+        <style>CLASSIC</style>
+        <performer-first-name>pFirstName</performer-first-name>
+        <performer-last-name>pLastName</performer-last-name>
+        <sound-recording-studio>RecordingStudio</sound-recording-studio>
+    </song>
+    <dance id="d2">
+        <title>Dance1</title>
+        <duration-seconds>130</duration-seconds>
+        <author-first-name>Danceauthor-first-name</author-first-name>
+        <author-last-name>Danceauthor-last-name</author-last-name>
+        <country>DanceCountry</country>
+        <style>CLASSIC</style>
+        <music-size>1.25</music-size>
+        <country-of-origin>CountryOrigin</country-of-origin>
+    </dance>
+    <song id="s3">
+        <title>Song2</title>
+        <duration-seconds>125</duration-seconds>
+        <author-first-name>Danceauthor-first-name</author-first-name>
+        <author-last-name>Danceauthor-last-name</author-last-name>
+        <country>DanceCountry</country>
+        <style>CLASSIC</style>
+        <performer-first-name>pFirstName</performer-first-name>
+        <performer-last-name>pLastName</performer-last-name>
+        <sound-recording-studio>RecordingStudio</sound-recording-studio>
+    </song>
+</compositions>

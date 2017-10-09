@@ -12,7 +12,7 @@ public class CompositionReaderTest {
     @Test
     public void testReader() throws FileReadException {
         CompositionReader reader=new CompositionReader();
-        List<String> strings = reader.reader("resources/songs.tx");
+        List<String> strings = reader.reader("resources/songs.txt");
         assertTrue(strings.size()!=0);
     }
 

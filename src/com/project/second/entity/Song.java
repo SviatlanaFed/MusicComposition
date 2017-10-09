@@ -1,10 +1,22 @@
 package com.project.second.entity;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "song")
 public class Song extends MusicComposition{
+    @XmlElement(name="performer-first-name")
     private String performerFirstName;
+    @XmlElement(name="performer-last-name")
     private String performerLastName;
+    @XmlElement(name="sound-recording-studio")
     private String soundRecordingStudio;
 
+    public Song() {}
 
     public Song(String title, int durationSeconds, String authorFirstName, String authorLastName, String country, MusicStyle style) {
         super(title, durationSeconds, authorFirstName, authorLastName, country, style);

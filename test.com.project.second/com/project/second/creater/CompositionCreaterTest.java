@@ -1,5 +1,6 @@
 package com.project.second.creater;
 
+import com.project.second.entity.Compositions;
 import com.project.second.entity.Dance;
 import com.project.second.entity.MusicComposition;
 import com.project.second.entity.MusicStyle;
@@ -13,9 +14,6 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
-
-
 
 public class CompositionCreaterTest {
     @Test
@@ -52,5 +50,12 @@ public class CompositionCreaterTest {
             }
         }
         assert(musicCompositions.size()!=0);
+    }
+
+    @Test
+    public void testCreateCompXml() throws Exception {
+        CompositionCreater creater = new CompositionCreater();
+        Compositions compositions = creater.createCompXml();
+        assert(compositions.getComposition().size()==3);
     }
 }

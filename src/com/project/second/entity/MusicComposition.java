@@ -1,12 +1,41 @@
 package com.project.second.entity;
 
-public abstract class MusicComposition {
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlSeeAlso({
+    Dance.class,
+    Song.class
+})
+@XmlType(name = "composition")
+public class MusicComposition {
+    @XmlAttribute(name = "id")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlID
+    private String id;
+
+    @XmlElement(name="title")
     private String title;
+    @XmlElement(name="duration-seconds")
     private int durationSeconds;
+    @XmlElement(name="author-first-name")
     private String authorFirstName;
+    @XmlElement(name="author-last-name")
     private String authorLastName;
+    @XmlElement(name="country")
     private String country;
+    @XmlElement(name="style")
     private MusicStyle style;
+
+    public MusicComposition() {}
 
     public MusicComposition(String title, int durationSeconds, String authorFirstName, String authorLastName, String country, MusicStyle style) {
         this.title = title;
