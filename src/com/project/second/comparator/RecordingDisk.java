@@ -5,7 +5,6 @@ import java.util.Comparator;
 import java.util.List;
 
 public class RecordingDisk {
-
    public Integer calculateTheDuration(List <MusicComposition> musicCompositions){
         int sumDuration=0;
         for (MusicComposition music:musicCompositions) {
